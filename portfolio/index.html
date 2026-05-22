@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Siri Chintapalli | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #060a48;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(5, 18, 49, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #52a5e9;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin-left: 25px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #0f9ad2;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 120px 8% 60px;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text h1 {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .hero-text h1 span {
+            color: #38bdf8;
+        }
+
+        .hero-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #cbd5e1;
+        }
+
+        .hero-text p {
+            line-height: 1.8;
+            max-width: 600px;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #38bdf8;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-image img {
+            width: 120px;
+            height: 120px;
+             border-radius: 50%;
+            border: 5px solid #38bdf8;
+            box-shadow: 0 0 40px rgba(56, 189, 248, 0.5);
+            object-fit: cover;
+            animation: float 3s ease-in-out infinite;
+        }
+
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .title {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 50px;
+            color: #38bdf8;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            align-items: center;
+        }
+
+        .card {
+            background: #323d51;
+            padding: 30px;
+            border-radius: 20px;
+            transition: 0.4s;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-box {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-box:hover {
+            background: #38bdf8;
+            color: #0f172a;
+            transform: scale(1.05);
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: #1e293b;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 10px;
+            color: #38bdf8;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 15px 0;
+            color: #cccfd4;
+            font-size: 18px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #020617;
+            color: #94a3b8;
+        }
+
+        .typing {
+            color: #38bdf8;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 42px;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">HEY SIRI</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>Hi, I'm <span>Siri Chintapalli</span></h1>
+            <h3>I am a <span class="typing"></span></h3>
+            <p>
+                As a fresher Python Full Stack Developer, I am passionate about building web applications and working on
+                machine learning projects. I enjoy creating simple, responsive, and user-friendly applications while
+                continuously learning new technologies.
+            </p>
+            <a href="#projects" class="btn">View Projects</a>
+        </div>
+
+
+    </section>
+
+    <section id="about">
+        <h2 class="title">About Me</h2>
+
+        <div class="about-content">
+
+            <div class="card" style="text-align:center;">
+                <img src="WhatsApp Image 2026-05-22 at 12.29.30 PM.jpeg" alt="Siri Chintapalli"
+                    style="width:280px; border-radius:20px; border:4px solid #38bdf8; box-shadow:0 0 25px rgba(56,189,248,0.4);">
+            </div>
+
+            <div>
+                <div class="card" style="margin-bottom:25px;">
+                    <h3>Who Am I?</h3>
+                    <br>
+                    <p>
+                        I am Siri Chintapalli, a Computer Science student interested in developing
+                        smart and innovative software solutions. I enjoy working on Machine Learning,
+                        Python, Frontend Development, and real-world projects.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Education</h3>
+                    <br>
+                    <p>
+                        B.Tech - Computer Science Engineering<br>
+                        Sri Sarathi Institute of Engineering and Technology<br>
+                        Passout Year: 2026
+                        CGPA: 8.0/10
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="title">Skills</h2>
+
+        <div class="skills">
+            <div class="skill-box">HTML</div>
+            <div class="skill-box">CSS</div>
+            <div class="skill-box">JavaScript</div>
+            <div class="skill-box">Python</div>
+            <div class="skill-box">Machine Learning</div>
+            <div class="skill-box">Flask</div>
+            <div class="skill-box">SQL</div>
+            <div class="skill-box">GitHub</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="title">Projects</h2>
+
+        <h3 style="margin-bottom: 25px; color:#38bdf8; font-size:28px;">Frontend Projects</h3>
+
+        <div class="projects">
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1115&auto=format&fit=crop"
+                    alt="Frontend Project">
+                <div class="project-content">
+                    <h3>Modern Portfolio Website</h3>
+                    <p>
+                        Responsive personal portfolio website designed using HTML, CSS, and JavaScript with modern UI
+                        animations.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.nsFWrWxq6h88SQYEgwCm-wHaHa?pid=Api&h=220&P=0"
+                    alt="Frontend Project">
+                <div class="project-content">
+                    <h3>Flower Shop Website</h3>
+                    <p>
+                        Creative flower shop website with responsive layout, animations, hover effects, and
+                        user-friendly design.
+                    </p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://bit-light.com/wp-content/uploads/2023/02/your-Online-eCommerce-Store.jpg"
+                    alt="Frontend Project">
+                <div class="project-content">
+                    <h3>e-commerce Website</h3>
+                    <p>
+                        Creative e-commerce website with responsive layout, animations, hover effects, and user-friendly
+                        design.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <br><br><br>
+
+        <h3 style="margin-bottom: 25px; color:#38bdf8; font-size:28px;">Backend & Machine Learning Projects</h3>
+
+        <div class="projects">
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1170&auto=format&fit=crop"
+                    alt="Backend Project">
+                <div class="project-content">
+                    <h3>Advanced Traffic Volume Estimation</h3>
+                    <p>
+                        Machine Learning based traffic prediction system using Random Forest Regressor with interactive
+                        charts and Flask backend.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1170&auto=format&fit=crop"
+                    alt="Backend Project">
+                <div class="project-content">
+                    <h3>Credit Card Fraud Detection</h3>
+                    <p>
+                        Intelligent fraud detection system developed using Machine Learning and Deep Learning
+                        techniques.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.wzcuVLlUcdZYL-F54VGczwHaFj?pid=Api&h=220&P=0"
+                    alt="Backend Project">
+                <div class="project-content">
+                    <h3>House Hunt</h3>
+                    <p>
+                        A modern house rental and property finding web application that helps users search, explore, and
+                        discover suitable homes with an interactive and user-friendly interface.
+                        using MERN STACK
+                    </p>
+                </div>
+
+            </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="title">Contact Me</h2>
+        <nav>
+            <a href="mailto:sirichintapalli3@gmail.com">email</a>
+            <a href="https://github.com/sirichintapalli3-droid" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/sirichintapalli" target="_blank">LinkedIn</a>
+
+        </nav>
+        <a href="#" class="btn">talk to me</a>
+    </section>
+
+    <footer>
+        <p>© 2026 Siri Chintapalli | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        const typingText = document.querySelector('.typing');
+
+        const words = [
+            'Machine Learning Enthusiast',
+            'Web Developer',
+            'Python Full stack Developer',
+            'Frontend Developer'
+        ];
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            const currentWord = words[wordIndex];
+
+            if (isDeleting) {
+                typingText.textContent = currentWord.substring(0, charIndex--);
+            } else {
+                typingText.textContent = currentWord.substring(0, charIndex++);
+            }
+
+            let speed = isDeleting ? 60 : 120;
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                speed = 1500;
+                isDeleting = true;
+            }
+
+            if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+            }
+
+            setTimeout(typeEffect, speed);
+        }
+
+        typeEffect();
+    </script>
+
+</body>
+
+</html>
